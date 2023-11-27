@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.setNumOfMoves = num => {
     state.numOfMoves = num
   }
-  showPopup('greeting')
+  //showPopup('greeting')
 })
 
 window.state = state
