@@ -1,0 +1,186 @@
+@import fonts
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html
+  font-family: 'Candara Light'
+  font-style: 'normal'
+  font-weight: 400
+  font-size: 16px
+  color: #2b3012
+body
+  background-color: #fdfff0
+  font-size: 1.2rem
+  position: relative
+.container
+  margin: 0 auto
+  width: 1200px
+.title
+  font-family: 'Comic Sans MS'
+  text-align: center
+  font-size: 2.5rem
+  margin-top: 20px
+  margin-bottom: 40px
+  user-select: none
+.controls
+  display: flex
+  justify-content: center
+  text-align: center
+  button
+    width: 148px
+    font-size: 1.07rem
+    margin-right: 20px
+    cursor: pointer
+    padding: 5px 8px
+    background-color: #d6f0b9
+    border: none
+    border-radius: 6px
+    &:hover
+      background-color: #c2ee8f
+    &:last-of-type
+      margin-right: 0
+    &:active
+      transform: scale(1.01)
+.stats
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-top: 25px
+  font-size: 1.2rem
+  div
+    margin-right: 30px
+    &:last-of-type
+      margin-right: 0
+    span
+      font-size: 1.8rem
+      margin-left: 6px
+#sound
+  cursor: pointer
+.board-wrapper
+  position: relative
+  max-width: fit-content
+  margin: 0 auto
+.pause-overlay
+  z-index: 20
+  display: none
+  align-items: center
+  justify-content: center
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0,0,.4)
+  p
+    font-size: 3rem
+    user-select: none
+    font-weight: bold
+.board
+  width: 420px
+  height: 420px
+  padding: 2px
+  display: grid
+  margin: 0 auto
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: repeat(4, 1fr)
+  gap: 2px
+  margin-top: 20px
+  user-select: none
+  border: 1px solid #83c43a
+  background-color: #d6f0b9
+  .cell
+    position: relative
+    .number
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      color: #44793d
+      font-family: 'Candara'
+      border: 1px solid #83c43a
+      font-size: 1.5rem
+      background-color: #fdfff0
+      transition: all 0.15s
+    .canMove
+      &:hover
+        cursor: pointer
+        background-color: #c2ee8f
+.size-info
+  text-align: center
+  margin-top: 12px
+.sizes
+  text-align: center
+  margin-top: 10px
+  span
+    font-size: 1.5rem
+    cursor: pointer
+    &.active
+      font-family: 'Candara'
+      color: #44793d
+      text-shadow: 1px 1px #c2ee8f
+      cursor: default
+.overlay
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0 ,0 ,0.2)
+.popup
+  z-index: 30
+  position: absolute
+  top: -100%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background: rgb(53,184,70)
+  background: linear-gradient(6deg, rgba(53,184,70,1) 0%, rgba(160,222,111,1) 56%, rgba(133,196,58,1) 100%)
+  text-align: center
+  font-weight: 700
+  padding: 10px
+  border-radius: 6px
+  transition: none
+  &.visible
+    top: 50%
+    transition: top .4s
+  button
+    width: 148px
+    font-size: 1.07rem
+    margin-right: 20px
+    cursor: pointer
+    padding: 5px 8px
+    background-color: #d6f0b9
+    border: none
+    border-radius: 6px
+    &:hover
+      font-weight: 700
+      color: #8b9657
+    &:last-of-type
+      margin-right: 0
+    &:active
+      transform: translate(0.5px, -0.5px)
+
+@media ( max-width: 700px )
+  html
+    font-size: 12px
+  body
+    padding: 5px
+  .controls
+    button
+      margin-right: 5px
+      &:last-of-type
+        margin-right: 0
+@media ( max-width: 440px )
+  .board
+    width: 300px
+    height: 300px
+  .controls
+    button
+      width: 75px
